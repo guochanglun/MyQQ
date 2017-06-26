@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/icon">
+        <file alias="login_bg___">2009529135327968713342.jpg</file>
+        <file alias="friends">me_friend_comment_no.png</file>
+        <file alias="search">friend_add.png</file>
+        <file>friend.png</file>
+        <file alias="apply">apply.png</file>
+        <file alias="friends_active">me_friend_comment_no_active.png</file>
+        <file alias="search_active">friend_add_active.png</file>
+        <file>friend_active.png</file>
+        <file alias="apply_active">apply_active.png</file>
+        <file alias="man">jboy_boy_72px_1063545_easyicon.net.png</file>
+        <file alias="woman">Hyouka_girl_128px_1100257_easyicon.net.png</file>
+        <file alias="add">add.png</file>
+        <file alias="login_bg">timg.jpeg</file>
+    </qresource>
+</RCC>
