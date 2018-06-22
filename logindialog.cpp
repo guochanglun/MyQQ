@@ -31,7 +31,7 @@ LoginDialog::LoginDialog(QWidget *parent) :
 
     // 添加clickable label
     ClickableLabel* label = new ClickableLabel(this);
-    label->setGeometry(350, 330, 141, 20);
+    label->setGeometry(320, 320, 141, 20);
     label->setText("没有账号？立即注册");
     label->setStyleSheet("color: white;");
     label->setCursor(Qt::PointingHandCursor);
@@ -89,8 +89,8 @@ void LoginDialog::on_login_clicked()
             +"}";
 
     request.setUrl(QUrl(url));
-    request.setRawHeader("X-Bmob-Application-Id", "09d385fd8fc9c6c8bc35a5598ba5c5df");
-    request.setRawHeader("X-Bmob-REST-API-Key", "a3d8486b6a800fade0acac9d64d5101b");
+    request.setRawHeader("X-Bmob-Application-Id", "ab104862b94b3bacf0e30748449a4160");
+    request.setRawHeader("X-Bmob-REST-API-Key", "5f14f7a216015c661b6b5c4567b38901");
     manager->get(request);
     connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(login(QNetworkReply*)));
 }

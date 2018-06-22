@@ -46,8 +46,8 @@ void QRegister::on_pushButton_clicked()
     QNetworkRequest request;
     QString url = "https://api.bmob.cn/1/classes/quser";
     request.setUrl(QUrl(url));
-    request.setRawHeader("X-Bmob-Application-Id", "09d385fd8fc9c6c8bc35a5598ba5c5df");
-    request.setRawHeader("X-Bmob-REST-API-Key", "a3d8486b6a800fade0acac9d64d5101b");
+    request.setRawHeader("X-Bmob-Application-Id", "ab104862b94b3bacf0e30748449a4160");
+    request.setRawHeader("X-Bmob-REST-API-Key", "5f14f7a216015c661b6b5c4567b38901");
     request.setRawHeader("Content-Type", "application/json");
 
     QJsonObject obj;
@@ -58,13 +58,14 @@ void QRegister::on_pushButton_clicked()
     obj.insert("password", password);
 
     QNetworkAccessManager* netManager = new QNetworkAccessManager(this);
-    netManager->post(request, QJsonDocument(obj).toJson());
+    QNetworkReply* reply = netManager->post(request, QJsonDocument(obj).toJson());
 
     connect(netManager, SIGNAL(finished(QNetworkReply*)), this, SLOT(registerReplyFinish(QNetworkReply*)));
 }
 
 void QRegister::registerReplyFinish(QNetworkReply *reply)
 {
+    qDebug()<<reply->readAll();
     QMessageBox::information(this, "信息", "注册成功，马上登录吧！");
     this->deleteLater();
     reply->deleteLater();
